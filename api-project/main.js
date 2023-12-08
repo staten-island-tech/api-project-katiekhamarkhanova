@@ -1,24 +1,20 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const URL ='http://dataservice.accuweather.com/currentconditions/v1/329260?apikey=BTM7UO03eyvKCMa6t4LeborVIvQK2lyT&language=en-us&details=false';
 
-setupCounter(document.querySelector('#counter'))
+async function getData(URL) {
+    try {
+        const response = await fetch(URL);
+        if (response.status !=200){
+            let pokemon = "peekachew";
+            throw new Error(pokemon);
+        }
+        console.log(response);
+        const data = await response.json();
+        console.log(data);
+        document.querySelector("h1").textContent = data.temperature;
+    } catch (error) {
+        console.log("sorry");
+    }
+}
+getData(URL);
