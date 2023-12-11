@@ -1,6 +1,6 @@
 import './style.css'
 
-const URL ='http://dataservice.accuweather.com/currentconditions/v1/14-349727_1_AL?apikey=%09BTM7UO03eyvKCMa6t4LeborVIvQK2lyT&language=en-us&details=true';
+const URL ='https://api.tomorrow.io/v4/weather/forecast?location=new york&timesteps=1d&units=metric&apikey=lrztIeax2sMJHKdeFeL2ej9MZFLJFRHx';
 
 async function getData(URL) {
     try {
