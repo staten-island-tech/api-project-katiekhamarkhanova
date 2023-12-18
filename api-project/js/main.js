@@ -1,6 +1,6 @@
 import '/css/style.css'
 
-const URL ='https://api.tomorrow.io/v4/weather/forecast?location=new york&timesteps=1d&units=metric&apikey=lrztIeax2sMJHKdeFeL2ej9MZFLJFRHx';
+const URL ='https://api.tomorrow.io/v4/weather/forecast?location=New York&timesteps=1d&units=metric&apikey=lrztIeax2sMJHKdeFeL2ej9MZFLJFRHx';
 
 async function getData(URL) {
     try {
