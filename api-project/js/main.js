@@ -1,4 +1,5 @@
 import '/css/style.css'
+import '/css/variables.css'
 
 const URL ='https://api.tomorrow.io/v4/weather/forecast?location=London&timesteps=1d&units=metric&apikey=lrztIeax2sMJHKdeFeL2ej9MZFLJFRHx';
 
