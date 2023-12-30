@@ -1,39 +1,30 @@
+import { searchWeatherByCity } from "./main.js";
+
 const DOMSelectors = {
   form: document.querySelector("#form"),
   box: document.querySelector(".container-box"),
   input: document.querySelector("#input"),
   citySearch: document.querySelector(".city-search"),
   app: document.querySelector("#app"),
+  appForecast: document.querySelector("#forecast"),
 }
 
-const userInput = DOMSelectors.input.value;
-export { userInput };
-
+function submitCitySearch() {
 DOMSelectors.form.addEventListener('submit', function(event) {
   event.preventDefault();
-  console.log(userInput); 
-});
+  const cityInput = DOMSelectors.input.value;
+  searchWeatherByCity(cityInput);
+})};
+submitCitySearch();
 
-
-/* DOMSelectors.form.addEventListener("submit", function (event) {
-  event.preventDefault(); */
 function addCard(data, i) {
   function removeTime(date) {
     let x = Array.from(date);
     x.splice(-10)
     const y = x.join('');
-    console.log(y);
     return y;
   }
-  function removeDate(time) {
-    let z = Array.from(time);
-    z.splice(0,11);
-    z.splice(5,4);
-    const w = z.join('');
-    console.log(w);
-    return w;
-  }
-  DOMSelectors.app.insertAdjacentHTML(
+  DOMSelectors.appForecast.insertAdjacentHTML(
     "beforeend",
     `<div class="card">
       <h2>${removeTime(data.timelines.daily[i].time)}</h2>
@@ -45,8 +36,8 @@ function addCard(data, i) {
       <p>UV Index: ${data.timelines.daily[i].values.uvIndexAvg}</p>
       <p>Visibility: ${data.timelines.daily[i].values.visibilityAvg} miles</p>
       <p>Wind Gust: ${data.timelines.daily[i].values.windGustAvg} mph</p>
-      <p>Sunrise: ${removeDate(data.timelines.daily[i].values.sunriseTime)} AM</p>
-      <p>Sunset: ${removeDate(data.timelines.daily[i].values.sunsetTime)} PM</p>
+      <p>Wind Speed: ${data.timelines.daily[i].values.windSpeedAvg} mph</p>
+      <p>Pressure: ${data.timelines.daily[i].values.pressureSurfaceLevelAvg} </p>
     </div>`
   );
 }

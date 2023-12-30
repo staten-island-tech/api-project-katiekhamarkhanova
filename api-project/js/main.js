@@ -1,7 +1,6 @@
 import '/css/style.css'
 import '/css/variables.css'
 import './dom.js';
-import { userInput } from "./dom.js";
 import { addCard } from "./dom.js";
 
 
@@ -16,14 +15,29 @@ async function getData(URL) {
         console.log(response);
         const data = await response.json();
         console.log(data);
-/*         data.results.forEach((city)=> console.log(city)); */
         weatherDisplay(data);
         
     } catch (error) {
-        console.log("sorry");
+        console.log("Sorry, error.");
     }
 }
 getData(URL);
+
+async function searchWeatherByCity(city) {
+    const searchURL = `https://api.tomorrow.io/v4/weather/forecast?location=${city}&timesteps=1d&units=imperial&apikey=lrztIeax2sMJHKdeFeL2ej9MZFLJFRHx`;
+    try {
+      const searchResponse = await fetch(searchURL);
+      if (searchResponse.status !=200) {
+        throw new Error(searchResponse.statusText);
+      }
+      const searchData = await searchResponse.json();
+      console.log(searchData);
+      searchWeatherDisplay(searchData);
+    } catch (error) {
+      console.log('Sorry. I could not find the city you searched for. Check your spelling.');
+    }
+  }
+export { searchWeatherByCity };
 
 function weatherDisplay(data) {
     document.getElementById("app2").textContent = data.location.name;
@@ -31,6 +45,11 @@ function weatherDisplay(data) {
       addCard(data, i);
     }
   }
-
-
+  function searchWeatherDisplay(searchData) {
+    document.getElementById("app2").textContent = searchData.location.name;
+    document.getElementById("forecast").innerHTML = '';
+    for (let i = 0; i < 5; i++) {
+        addCard(searchData, i);
+    }
+  }
   
