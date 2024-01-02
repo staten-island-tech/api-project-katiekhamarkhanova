@@ -20,19 +20,6 @@ async function getData(URL) {
     } catch (error) {
         console.log("Sorry, error.");
     }
-    console.log(response);
-    const data = await response.json();
-    console.log(data);
-    /*         data.results.forEach((city)=> console.log(city)); */
-    DOMSelectors.constantCard.insertAdjacentHTML(
-      "beforeend",
-      `<div class="card">
-<h2>${DOMSelectors.location.name}</h2>
-</div>`
-    );
-  } catch (error) {
-    console.log("sorry");
-  }
 }
 getData(URL);
 
