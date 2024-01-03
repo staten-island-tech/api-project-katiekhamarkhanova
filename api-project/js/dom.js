@@ -5,7 +5,7 @@ const DOMSelectors = {
   box: document.querySelector(".container-box"),
   input: document.querySelector("#input"),
   citySearch: document.querySelector(".city-search"),
-  app: document.querySelector("#app"),
+  allInfo: document.querySelector("#allInfo"),
   appForecast: document.querySelector("#forecast"),
 }
 
@@ -43,3 +43,12 @@ function addCard(data, i) {
 }
 export { addCard };
 
+function errorPage() {
+  DOMSelectors.allInfo.innerHTML = "";
+  DOMSelectors.appForecast.insertAdjacentHTML(
+    "beforeend",
+    `<h2>ERROR</h2>
+     <h3>Sorry, I could not find the city you were looking for! Check your spelling.</h3>`
+  );
+}
+export { errorPage }
