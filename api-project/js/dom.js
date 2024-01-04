@@ -1,18 +1,9 @@
 import { searchWeatherByCity } from "./main.js";
 
-const DOMSelectors = {
-  form: document.querySelector("#form"),
-  box: document.querySelector(".container-box"),
-  input: document.querySelector("#input"),
-  citySearch: document.querySelector(".city-search"),
-  allInfo: document.querySelector("#info"),
-  appForecast: document.querySelector("#forecast"),
-}
-
 function submitCitySearch() {
-DOMSelectors.form.addEventListener('submit', function(event) {
+  document.querySelector("#form").addEventListener('submit', function(event) {
   event.preventDefault();
-  const cityInput = DOMSelectors.input.value;
+  const cityInput = document.querySelector("#input").value;
   searchWeatherByCity(cityInput);
 })};
 submitCitySearch();
@@ -24,7 +15,7 @@ function addCard(data, i) {
     const y = x.join('');
     return y;
   }
-  DOMSelectors.appForecast.insertAdjacentHTML(
+  document.querySelector("#forecast").insertAdjacentHTML(
     "beforeend",
     `<div class="card">
       <h2>${removeTime(data.timelines.daily[i].time)}</h2>
@@ -44,21 +35,8 @@ function addCard(data, i) {
 export { addCard };
 
 function errorPage() {
-  DOMSelectors.allInfo.innerHTML = '';
-  DOMSelectors.allInfo.insertAdjacentHTML(
-    "beforeend",
-    `<div>
-    <h2>ERROR</h2>
-     <h3>Sorry, I could not find the city you were looking for! Check your spelling.</h3>
-     </div>`
-  );
+  document.getElementById("forecast").innerHTML = '';
+  document.getElementById("locationName").textContent = "ERROR";
+  document.getElementById("weatherForecastTitle").textContent = "Sorry, I could not find the city you were looking for! Check your spelling.";
 }
 export { errorPage }
-
-function removeErrorPage() {
-  const errorElement = document.querySelector('.error-message');
-  if (errorElement) {
-    errorElement.remove();
-  }
-}
-export { removeErrorPage }

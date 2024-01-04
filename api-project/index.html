@@ -8,17 +8,21 @@
   </head>
   <body>
     <div class="container-box">
+      <button id="imperial-btn">Imperial Units</button>
+      <button id="metric-btn">Metric Units</button>
       <form action="" id="form">
         <label for="searchBar" id="label">Enter your city here:</label>
         <input type="text" name="location" class="city-search" id="input" />
         <div class="seperateButton">
-          <input type="submit" value="Click to Submit" id="submit" />
+          <input type="submit" value="Go!" id="submit" />
         </div>
       </form>
-          <h1 id="app2"></h1>
-          <h2>5 DAY WEATHER FORECAST</h2>
+      <div id = "info">
+          <h1 id="locationName"></h1>
+          <h2 id="weatherForecastTitle">5 DAY WEATHER FORECAST</h2>
           <div id ="forecast">
           </div>
+        </div>
     </div>
     <script type="module" src="/js/main.js"></script>
   </body>
