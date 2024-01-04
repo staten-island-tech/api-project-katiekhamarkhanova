@@ -3,6 +3,7 @@ import '/css/variables.css'
 import './dom.js';
 import { addCard } from "./dom.js";
 import { errorPage } from "./dom.js";
+import { removeErrorPage } from "./dom.js";
 
 const URL =`https://api.tomorrow.io/v4/weather/forecast?location=Staten Island&timesteps=1d&units=imperial&apikey=lrztIeax2sMJHKdeFeL2ej9MZFLJFRHx`;
 
@@ -34,7 +35,6 @@ async function searchWeatherByCity(city) {
       console.log(searchData);
       searchWeatherDisplay(searchData);
     } catch (error) {
-      errorPage();
     }
   }
 export { searchWeatherByCity };
@@ -46,10 +46,9 @@ function weatherDisplay(data) {
     }
   }
   function searchWeatherDisplay(searchData) {
-    document.getElementById("app2").textContent = searchData.location.name;
     document.getElementById("forecast").innerHTML = '';
+    document.getElementById("app2").textContent = searchData.location.name;
     for (let i = 0; i < 5; i++) {
         addCard(searchData, i);
     }
   }
-  

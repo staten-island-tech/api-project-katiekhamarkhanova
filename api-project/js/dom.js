@@ -5,7 +5,7 @@ const DOMSelectors = {
   box: document.querySelector(".container-box"),
   input: document.querySelector("#input"),
   citySearch: document.querySelector(".city-search"),
-  allInfo: document.querySelector("#allInfo"),
+  allInfo: document.querySelector("#info"),
   appForecast: document.querySelector("#forecast"),
 }
 
@@ -44,11 +44,21 @@ function addCard(data, i) {
 export { addCard };
 
 function errorPage() {
-  DOMSelectors.allInfo.innerHTML = "";
-  DOMSelectors.appForecast.insertAdjacentHTML(
+  DOMSelectors.allInfo.innerHTML = '';
+  DOMSelectors.allInfo.insertAdjacentHTML(
     "beforeend",
-    `<h2>ERROR</h2>
-     <h3>Sorry, I could not find the city you were looking for! Check your spelling.</h3>`
+    `<div>
+    <h2>ERROR</h2>
+     <h3>Sorry, I could not find the city you were looking for! Check your spelling.</h3>
+     </div>`
   );
 }
 export { errorPage }
+
+function removeErrorPage() {
+  const errorElement = document.querySelector('.error-message');
+  if (errorElement) {
+    errorElement.remove();
+  }
+}
+export { removeErrorPage }
