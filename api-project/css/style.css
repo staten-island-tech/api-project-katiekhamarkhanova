@@ -1,15 +1,11 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Darker Grotesque', serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 500;
 
   background-image: url("public/sky9.jpg");
   background-repeat: no-repeat;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -42,9 +38,7 @@ button:focus-visible {
 label {
   color: black;
 }
-form {
-  margin: 2.5rem;
-}
+
 h2 {
   color: black;
 }
