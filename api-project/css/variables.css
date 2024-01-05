@@ -1,13 +1,46 @@
-#app {
+.container-box {
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
   }
-  
+  #forecast {
+    align-items: center;
+  }
+  #form {
+    background-color: rgba(235, 241, 255, 0.747);
+    border-radius: 3rem;
+    width: 60%;
+    padding: 1.2rem;
+    font-size: 1.7rem;
+    border: 0.15rem solid;
+    border-color: white;
+
+  }
+  #input {
+    border-radius: 3rem;
+    font-size: 1.7rem;
+  }
   .card {
-    padding: 2em;
+    padding: 1em;
+      width:100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgb(255, 255, 255);
+      justify-content: space-between;
+      margin: 3rem 0;
+      border-radius: 20px;
+      filter: drop-shadow(20px 15px 10px rgb(0, 0, 0));
+      transition: all 0.5s;
   }
 .seperateButton {
-    padding: 1.2rem;
+    padding: 1.4rem;
+    display: inline;
 }  
+#submit {
+  font-size: 1.5rem;
+  border-radius: 3rem;
+  padding: 0.4rem;
+  background-color: rgb(135, 175, 235);
+}

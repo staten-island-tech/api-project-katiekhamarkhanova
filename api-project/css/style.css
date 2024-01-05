@@ -3,7 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  background-color: #f3e9e9;
+  background-image: url("public/sky9.jpg");
+  background-repeat: no-repeat;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -30,7 +31,8 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  color: black;
+  color: rgba(235, 241, 255, 0.808);
+  margin: 2rem;
 }
 
 button:focus,
@@ -45,4 +47,15 @@ form {
 }
 h2 {
   color: black;
+}
+
+@media screen and (max-width: 1200px) {
+  .card {
+      width: 40%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .card {
+      width: 100%;
+  }
 }
