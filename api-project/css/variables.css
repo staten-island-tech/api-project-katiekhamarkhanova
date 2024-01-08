@@ -1,0 +1,100 @@
+.container-box {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  align-items: center;
+}
+  #form {
+    background-color: rgba(235, 241, 255, 0.747);
+    border-radius: 3rem;
+    width: 55%;
+    font-size: 1.7rem;
+    border: 0.155rem solid;
+    border-color: white;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  #input {
+    border-radius: 1rem;
+    font-size: 1.7rem;
+    border: 0.2rem solid;
+    border-color: rgb(135, 175, 235);
+    font-family: 'Darker Grotesque', serif;
+    width: 98%;
+    margin-left: 0.9rem;
+  }
+  .card {
+    padding: 1em;
+      width:100%;
+      line-height: 1.7;
+      background-color: rgb(255, 255, 255);
+      transition: all 0.5s;
+      border: 3px solid;
+      border-color: rgba(12, 61, 117, 0.521);
+  }
+.seperateButton {
+  padding: 0.7rem;
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-end; 
+}  
+#submit {
+  border-radius: 3rem;
+  background-color: rgb(135, 175, 235);
+  font-family: 'Darker Grotesque', serif;
+  border: 0.2rem solid;
+  border-color: rgb(135, 175, 235);
+  height: 25%;
+  width: 25%;
+}
+#submit:hover, button:hover {
+  cursor:pointer;
+}
+#locationName {
+  font-size: 2.3rem;
+  line-height:0.7rem;
+  color: rgba(235, 241, 255, 0.808);
+}
+#weatherForecastTitle {
+  font-size: 1.5rem;
+  line-height:0.7rem;
+  color: rgb(135, 175, 235);
+}
+#introduction {
+  background-color: rgba(12, 61, 117, 0.808);
+}
+#locationName {
+  font-size: 2.3rem;
+  line-height:0.7rem;
+  color: rgba(235, 241, 255, 0.808);
+  animation: move-left-to-right linear 17s infinite;
+}
+#weatherForecastTitle {
+  font-size: 1.5rem;
+  line-height:0.7rem;
+  color: rgb(135, 175, 235);
+  animation: move-left-to-right linear 17s infinite;
+}
+#introduction {
+  background-color: rgba(12, 61, 117, 0.596);
+  padding: 0.001rem;
+  margin: 2rem;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-18%);
+}
+#forecast {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center; 
+  margin: 0 auto;
+  align-self: center;
+  border: 2px solid;
+  border-color: rgba(134, 163, 206, 0.452);
+  padding: 1rem;
+  background-color: rgba(141, 172, 218, 0.651);
+  filter: drop-shadow(20px 15px 10px rgb(15, 59, 109));
+  width: 85%;
+}

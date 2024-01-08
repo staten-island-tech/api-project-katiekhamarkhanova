@@ -2,22 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/weather22.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Based on City</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;600;700&family=Diphylleia&family=Genos:wght@500&family=Kanit:wght@100;400&family=Manrope:wght@300&family=Montserrat&family=Nanum+Myeongjo&family=Playfair+Display&family=Quicksand&family=Rajdhani:wght@500&family=Tektur&family=Work+Sans&display=swap" rel="stylesheet">
+
+    <title>5 Day Weather Forecast</title>
   </head>
   <body>
     <div class="container-box">
+    <h1>CITY WEATHER FORECAST</h1>
       <form action="" id="form">
-        <label for="searchBar" id="label">Enter your city here:</label>
-        <input type="text" name="location" class="city-search" id="input" />
+        <input type="text" name="location" class="city-search" id="input" placeholder="Enter your city here..."/>
         <div class="seperateButton">
-          <input type="submit" value="Click to Submit" id="submit" />
+          <input type="image" src="/search.webp" alt="search" id="submit"  />
         </div>
-        <div id="app"></div>
       </form>
+      <div id = "info">
+        <div id="introduction">
+          <h2 id="locationName"></h2>
+          <h3 id="weatherForecastTitle">5 DAY WEATHER FORECAST</h3>
+        </div>
+          <div id ="forecast">
+          </div>
+        </div>
     </div>
     <script type="module" src="/js/main.js"></script>
-    <script src="/js/dom.js"></script>
   </body>
 </html>
