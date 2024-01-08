@@ -1,0 +1,38 @@
+@keyframes move-left-to-right {
+    from {
+        transform: translateX(-86%);
+    }
+    to {
+        transform: translateX(95%);
+    }
+}
+
+@keyframes move-right-to-left {
+    from {
+        transform: translateX(70%);
+    }
+    to {
+        transform: translateX(-70%);
+    }
+}
+@media screen and (max-width: 1200px) {
+    .card {
+      width: 40%;
+    }
+    #locationName {
+      line-height: 1rem;
+      font-size: 1rem;
+    }
+    #form {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .container-box {
+        width: 100%;
+    }
+    #input {
+        width: 100%;
+    }
+  }
+  

@@ -53,31 +53,3 @@ function searchWeatherDisplay(searchData) {
     addCard(searchData, i);
   }
 }
-document.getElementById("imperial-btn").addEventListener("click", async () => {
-  const imperialURL = `https://api.tomorrow.io/v4/weather/forecast?location=Staten Island&timesteps=1d&units=imperial&apikey=lrztIeax2sMJHKdeFeL2ej9MZFLJFRHx`;
-  document.getElementById("forecast").innerHTML = "";
-  await getData(imperialURL);
-  updateTemperatureDisplay("°C", "°F");
-  updateTemperatureDisplay("kilometres", "miles");
-  updateTemperatureDisplay("kmph", "mph");
-});
-
-document.getElementById("metric-btn").addEventListener("click", async () => {
-  const metricURL = `https://api.tomorrow.io/v4/weather/forecast?location=Staten Island&timesteps=1d&units=metric&apikey=lrztIeax2sMJHKdeFeL2ej9MZFLJFRHx`;
-  document.getElementById("forecast").innerHTML = "";
-  await getData(metricURL);
-  updateTemperatureDisplay("°F", "°C");
-  updateTemperatureDisplay("miles", "kilometres");
-  updateTemperatureDisplay("mph", "kmph");
-});
-
-
-
-function updateTemperatureDisplay(fromUnit, toUnit) {
-  const temperatureElements = document.querySelectorAll("p"); // Assuming temperature values are in h3 elements
-  temperatureElements.forEach((element) => {
-    if (element.textContent.includes(fromUnit)) {
-      element.textContent = element.textContent.replace(fromUnit, toUnit);
-    }
-  });
-}

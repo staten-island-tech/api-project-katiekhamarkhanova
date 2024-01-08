@@ -12,19 +12,18 @@
   </head>
   <body>
     <div class="container-box">
-      <h1>5 DAY WEATHER FORECAST</h1>
+    <h1>CITY WEATHER FORECAST</h1>
       <form action="" id="form">
-        <label for="searchBar" id="label">Enter your city here:</label>
-        <input type="text" name="location" class="city-search" id="input" />
+        <input type="text" name="location" class="city-search" id="input" placeholder="Enter your city here..."/>
         <div class="seperateButton">
-          <input type="submit" value="Go!" id="submit" />
+          <input type="image" src="/search.webp" alt="search" id="submit"  />
         </div>
       </form>
-      <button id="imperial-btn">Imperial Units</button>
-      <button id="metric-btn">Metric Units</button>
       <div id = "info">
+        <div id="introduction">
           <h2 id="locationName"></h2>
           <h3 id="weatherForecastTitle">5 DAY WEATHER FORECAST</h3>
+        </div>
           <div id ="forecast">
           </div>
         </div>
